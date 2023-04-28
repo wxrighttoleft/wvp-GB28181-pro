@@ -20,9 +20,9 @@ spring:
     datasource:
         # 使用mysql 打开23-28行注释， 删除29-36行
          name: wvp
-         url: jdbc:mysql://127.0.0.1:3306/wvp?useUnicode=true&characterEncoding=UTF8&rewriteBatchedStatements=true&allowMultiQueries=true&useSSL=false&allowMultiQueries=true
-         username: root
-         password: root
+         url: jdbc:mysql://${WVP_MYSQL_HOST:127.0.0.1}:${WVP_MYSQL_PORT:3306}/${WVP_MYSQL_DB:wvp}?useUnicode=true&characterEncoding=UTF8&rewriteBatchedStatements=true&allowMultiQueries=true&useSSL=false&allowMultiQueries=true
+         username: ${WVP_MYSQL_USERNAME:root}
+         password: ${WVP_MYSQL_PASSWORD:root}
          type: com.zaxxer.hikari.HikariDataSource
          driver-class-name: com.mysql.cj.jdbc.Driver
 

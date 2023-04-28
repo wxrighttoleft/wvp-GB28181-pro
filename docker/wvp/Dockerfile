@@ -16,7 +16,7 @@ RUN cd /home && \
 RUN cd /home && \
         git clone "${gitUrl}/wvp-GB28181-pro.git"
 RUN cd /home/wvp-GB28181-pro/web_src && \
-        npm install && \
+        npm --registry https://registry.npm.taobao.org install && \
         npm run build
 RUN cd /home/wvp-GB28181-pro && \
         mvn clean package -Dmaven.test.skip=true && \
